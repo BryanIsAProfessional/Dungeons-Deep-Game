@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://dintnu14gwejk"]
+
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_jw05n"]
+[ext_resource type="Texture2D" uid="uid://qcv8x0vrnf8i" path="res://Assets/horse armor.png" id="1_qm6k2"]
+
+[resource]
+script = ExtResource("1_jw05n")
+display_name = "HorseArmor"
+icon = ExtResource("1_qm6k2")
+rarity = 0

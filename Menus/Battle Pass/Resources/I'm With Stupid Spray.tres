@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://difrno3rpdw6i"]
+
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_2mb5j"]
+[ext_resource type="Texture2D" uid="uid://l4wm146mwg3s" path="res://Assets/B1pppR4gVKL._CLa_21402000_71zxtUe5AxL.png_00214020000.00.02140.02000.0_AC_UY1000_.jpeg" id="1_7py04"]
+
+[resource]
+script = ExtResource("1_2mb5j")
+display_name = "I'm With STupid Spray"
+icon = ExtResource("1_7py04")
+rarity = 1

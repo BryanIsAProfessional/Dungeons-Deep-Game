@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3rptvwf3ogkh"]
+
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass.gd" id="1_3ywu1"]
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_m6jqb"]
+[ext_resource type="Resource" uid="uid://csrfevg8gpibp" path="res://Menus/Battle Pass/Resources/Nude Mod.tres" id="3_338ii"]
+[ext_resource type="Resource" uid="uid://20g66ry8b1a6" path="res://Menus/Battle Pass/Resources/Get Her Pregnant.tres" id="4_hnti6"]
+[ext_resource type="Resource" uid="uid://nfpttbw2a8q1" path="res://Menus/Battle Pass/Resources/Shrek Spray.tres" id="4_om8w2"]
+[ext_resource type="Resource" uid="uid://bmcnrye1wpy5m" path="res://Menus/Battle Pass/Resources/Some Guy.tres" id="5_kua0r"]
+[ext_resource type="Resource" uid="uid://basl3qh6513wb" path="res://Menus/Battle Pass/Resources/Bruh Spray.tres" id="6_7318i"]
+[ext_resource type="Resource" uid="uid://difrno3rpdw6i" path="res://Menus/Battle Pass/Resources/I'm With Stupid Spray.tres" id="7_8ai0y"]
+[ext_resource type="Resource" uid="uid://dyr62c5h3idlc" path="res://Menus/Battle Pass/Resources/HouseBuilder.tres" id="7_fpnrg"]
+[ext_resource type="Resource" uid="uid://dintnu14gwejk" path="res://Menus/Battle Pass/Resources/HorseArmor.tres" id="10_82bpu"]
+
+[node name="Battle Pass" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ywu1")
+battle_pass_items = Array[ExtResource("2_m6jqb")]([ExtResource("3_338ii"), ExtResource("4_hnti6"), ExtResource("4_om8w2"), ExtResource("5_kua0r"), ExtResource("7_fpnrg"), ExtResource("6_7318i"), ExtResource("7_8ai0y"), ExtResource("10_82bpu")])
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.5
+offset_top = 41.0
+offset_right = 154.5
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "BATTLE PASS"
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -23.0
+offset_right = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 0.0535786
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "more like buncha ass"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(-0.05, 128)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -145.0
+offset_right = -16.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Items Container" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

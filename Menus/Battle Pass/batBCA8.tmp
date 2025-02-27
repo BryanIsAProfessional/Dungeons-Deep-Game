@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://djnwpespu7gh2"]
+
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item.gd" id="1_ya41g"]
+[ext_resource type="Texture2D" uid="uid://bctj41iuwrvmx" path="res://Assets/no-item.png" id="2_2a51v"]
+
+[node name="BattlePassItem" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1024.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ya41g")
+locked_tint = Color(0.203951, 0.0783514, 0.123527, 1)
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.105882, 0.105882, 0.690196)
+
+[node name="Icon" type="TextureButton" parent="."]
+modulate = Color(0.203951, 0.0783514, 0.123527, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_2a51v")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Icon" to="." method="_on_icon_pressed"]

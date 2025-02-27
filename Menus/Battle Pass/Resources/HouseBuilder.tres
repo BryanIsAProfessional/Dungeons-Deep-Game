@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://dyr62c5h3idlc"]
+
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_33hko"]
+[ext_resource type="Texture2D" uid="uid://jlvbhyu61vla" path="res://Assets/house_builder.png" id="1_85k7y"]
+
+[resource]
+script = ExtResource("1_33hko")
+display_name = "HouseBuilder"
+icon = ExtResource("1_85k7y")
+rarity = 3

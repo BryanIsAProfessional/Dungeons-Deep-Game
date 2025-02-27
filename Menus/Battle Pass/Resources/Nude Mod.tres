@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://csrfevg8gpibp"]
+
+[ext_resource type="Texture2D" uid="uid://fi3nif3enme8" path="res://Assets/nude_mod.png" id="1_ymngf"]
+[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_xuk5i"]
+
+[resource]
+script = ExtResource("2_xuk5i")
+display_name = "Nude Mod"
+icon = ExtResource("1_ymngf")
+rarity = 2
