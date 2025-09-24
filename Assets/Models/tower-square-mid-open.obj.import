@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnorpremu45me"
+path="res://.godot/imported/tower-square-mid-open.obj-ec2ac576e18dd757e8c127da74d7d110.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-square-mid-open.obj-ec2ac576e18dd757e8c127da74d7d110.mesh"]
+
+source_file="res://Assets/Models/tower-square-mid-open.obj"
+dest_files=["res://.godot/imported/tower-square-mid-open.obj-ec2ac576e18dd757e8c127da74d7d110.mesh", "res://.godot/imported/tower-square-mid-open.obj-ec2ac576e18dd757e8c127da74d7d110.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

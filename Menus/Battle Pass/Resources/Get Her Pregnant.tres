@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://20g66ry8b1a6"]
 
 [ext_resource type="Texture2D" uid="uid://biet28o1xjno2" path="res://Assets/pregnant.png" id="1_b3y01"]
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_h3hi8"]
+[ext_resource type="Script" uid="uid://cytw7d03n1rf2" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_h3hi8"]
 
 [resource]
 script = ExtResource("1_h3hi8")

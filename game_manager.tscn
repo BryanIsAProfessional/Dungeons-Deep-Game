@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmgs5kg4cov4h"]
+
+[ext_resource type="Script" uid="uid://5in2133np47n" path="res://Levels/game_manager.gd" id="1_70yv6"]
+
+[node name="GameManager" type="Node" node_paths=PackedStringArray("players", "enemies")]
+script = ExtResource("1_70yv6")
+players = [NodePath("")]
+enemies = [NodePath("")]

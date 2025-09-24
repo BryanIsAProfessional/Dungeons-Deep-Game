@@ -1,59 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bofc2xs7a4wsx"]
+[gd_scene load_steps=4 format=3 uid="uid://bofc2xs7a4wsx"]
 
 [ext_resource type="PackedScene" uid="uid://c37r4tmfyd8wt" path="res://Menus/Main Menu/main_menu.tscn" id="1_kd5f2"]
-[ext_resource type="Script" path="res://Menus/Main Menu/main_menu.gd" id="2_ljowh"]
 [ext_resource type="PackedScene" uid="uid://b3rptvwf3ogkh" path="res://Menus/Battle Pass/battle_pass.tscn" id="3_rtppf"]
-
-[sub_resource type="SystemFont" id="SystemFont_2l73v"]
-font_names = PackedStringArray("Cursive")
+[ext_resource type="AudioStream" uid="uid://dq10d2l4f5rn5" path="res://Assets/Audio/Music/mushrooms.wav" id="6_3dxm6"]
 
 [node name="Main" type="Node"]
 
 [node name="Main Menu" parent="." instance=ExtResource("1_kd5f2")]
-script = ExtResource("2_ljowh")
-
-[node name="Title" type="Label" parent="Main Menu"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -61.5
-offset_top = 45.0
-offset_right = 61.5
-offset_bottom = 68.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.632225, 1.9493e-06, 3.36915e-07, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = SubResource("SystemFont_2l73v")
-theme_override_font_sizes/font_size = 150
-text = "Dungeons Deep"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 139.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Battle Pass Button" type="Button" parent="Main Menu/VBoxContainer"]
-layout_mode = 2
-text = "Battle Pass"
-
-[node name="Quit Button" type="Button" parent="Main Menu/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+car_world_path = "res://Levels/penis_world.tscn"
 
 [node name="Battle Pass" parent="." instance=ExtResource("3_rtppf")]
 visible = false
 
-[connection signal="pressed" from="Main Menu/VBoxContainer/Battle Pass Button" to="Main Menu" method="_on_battle_pass_button_pressed"]
-[connection signal="pressed" from="Main Menu/VBoxContainer/Quit Button" to="Main Menu" method="_on_quit_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3dxm6")
+volume_db = -15.0

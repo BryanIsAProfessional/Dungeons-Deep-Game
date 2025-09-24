@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2srug2j2ljp"]
+
+[ext_resource type="ArrayMesh" uid="uid://df4tpb8ijmics" path="res://Assets/Models/character-male-b.obj" id="1_twy52"]
+[ext_resource type="Script" uid="uid://dcqoob238ro4j" path="res://Entities/Player/wizard.gd" id="2_hc5oc"]
+[ext_resource type="Script" uid="uid://bf5mg7a4f064d" path="res://Entities/Player/Minigames/Wizard/wizard_minigame.gd" id="3_1mevy"]
+[ext_resource type="PackedScene" uid="uid://5wusuwyfx4m8" path="res://Entities/atb_meter.tscn" id="4_jucao"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_de3yi"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Wizard" type="MeshInstance3D" node_paths=PackedStringArray("minigame")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_twy52")
+skeleton = NodePath("../../..")
+script = ExtResource("2_hc5oc")
+minigame = NodePath("Minigame")
+
+[node name="Minigame" type="Node" parent="."]
+script = ExtResource("3_1mevy")
+display_name = "Spellblast"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ATB Meter" parent="." instance=ExtResource("4_jucao")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.893605, 0)
+texture = SubResource("ViewportTexture_de3yi")

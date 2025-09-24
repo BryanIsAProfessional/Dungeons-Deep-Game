@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buplurd6jts1t"
+path="res://.godot/imported/tower-hexagon-roof.obj-a0a02ae69ca7d92d6b428ee1174f3f70.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-hexagon-roof.obj-a0a02ae69ca7d92d6b428ee1174f3f70.mesh"]
+
+source_file="res://Assets/Models/tower-hexagon-roof.obj"
+dest_files=["res://.godot/imported/tower-hexagon-roof.obj-a0a02ae69ca7d92d6b428ee1174f3f70.mesh", "res://.godot/imported/tower-hexagon-roof.obj-a0a02ae69ca7d92d6b428ee1174f3f70.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

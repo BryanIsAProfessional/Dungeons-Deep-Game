@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2lfds5o6i3mj"
+path="res://.godot/imported/flag-banner-short.obj-cfa80416f1023f9ccae17142665cd852.mesh"
+
+[deps]
+
+files=["res://.godot/imported/flag-banner-short.obj-cfa80416f1023f9ccae17142665cd852.mesh"]
+
+source_file="res://Assets/Models/flag-banner-short.obj"
+dest_files=["res://.godot/imported/flag-banner-short.obj-cfa80416f1023f9ccae17142665cd852.mesh", "res://.godot/imported/flag-banner-short.obj-cfa80416f1023f9ccae17142665cd852.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

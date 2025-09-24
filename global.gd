@@ -8,3 +8,7 @@ func _ready() -> void:
 func play_audio(audio : AudioStream):
 	global_audio_player.stream = audio
 	global_audio_player.play(0)
+
+func open_scene(path):
+	var obj = load(path).instantiate()
+	get_tree().root.add_child(obj)

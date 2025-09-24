@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://blcbfcb4tem0g"]
+
+[ext_resource type="Script" uid="uid://cr81lbofeqmwr" path="res://Points Of Interest/point_of_interest.gd" id="1_nrnwm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_you40"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dsmrs"]
+size = Vector3(4, 5, 4)
+
+[sub_resource type="QuadMesh" id="QuadMesh_nrnwm"]
+
+[node name="Point Of Interest" type="Area3D" node_paths=PackedStringArray("camera_target")]
+script = ExtResource("1_nrnwm")
+camera_target = NodePath("Marker3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_you40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_dsmrs")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67406, 2.21701, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.69548, 2.22032, 0)
+mesh = SubResource("QuadMesh_nrnwm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

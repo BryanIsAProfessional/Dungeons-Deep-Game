@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://by6khyd3apsro"]
+
+[ext_resource type="Script" uid="uid://b1m10wb803crr" path="res://Points Of Interest/Communist Alvaresto/communist_alvaresto.gd" id="1_1pdv5"]
+[ext_resource type="PackedScene" uid="uid://cx0p5sljblb5s" path="res://Points Of Interest/Communist Alvaresto/nose_clicker.tscn" id="2_1pdv5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_you40"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dsmrs"]
+size = Vector3(4, 5, 4)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1pdv5"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pdv5"]
+size = Vector3(5, 5, 0.0800781)
+
+[node name="Communist Alvaresto" type="Area3D" node_paths=PackedStringArray("camera_target")]
+script = ExtResource("1_1pdv5")
+camera_target = NodePath("Sprite3D/Marker3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_you40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_dsmrs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.69548, 2.22032, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55622, 5.25877)
+texture = SubResource("ViewportTexture_1pdv5")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+
+[node name="Nose Clicker" parent="Sprite3D/SubViewport" instance=ExtResource("2_1pdv5")]
+
+[node name="Marker3D" type="Marker3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, -1.13886e-22, 0, 1, 0, -1.55294e-22, 0, 1, 0.288926, 0.145119, -0.00546026)
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+shape = SubResource("BoxShape3D_1pdv5")
+
+[connection signal="active_changed" from="." to="Sprite3D/SubViewport/Nose Clicker" method="_on_active_changed"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="Sprite3D/Area3D" to="." method="_on_area_3d_input_event"]

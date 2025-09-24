@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://lhr0xbn1uugv"]
+
+[ext_resource type="Script" uid="uid://unianh52cwr1" path="res://Entities/Player/CarPlayerController.gd" id="1_7822p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24jkt"]
+size = Vector3(1.75391, 2.39887, 4.0166)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_du81n"]
+distance_fade_mode = 2
+distance_fade_min_distance = 0.5
+distance_fade_max_distance = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7822p"]
+material = SubResource("StandardMaterial3D_du81n")
+size = Vector3(1.75, 2.1, 4)
+
+[sub_resource type="TorusMesh" id="TorusMesh_7822p"]
+inner_radius = 0.2
+outer_radius = 0.75
+
+[node name="VehicleBody3D" type="VehicleBody3D" node_paths=PackedStringArray("cam_position_target")]
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 6
+script = ExtResource("1_7822p")
+cam_position_target = NodePath("Marker3D")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629484, 1.93118, 0.410568)
+
+[node name="CamPos" type="Node3D" parent="."]
+transform = Transform3D(-1, 2.24793e-08, -8.44833e-08, 0, 0.966376, 0.257133, 8.74228e-08, 0.257133, -0.966376, 0, 3.614, -5.046)
+
+[node name="Camera3D" type="Camera3D" parent="CamPos"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2007, 0)
+shape = SubResource("BoxShape3D_24jkt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34727, 0)
+mesh = SubResource("BoxMesh_7822p")
+
+[node name="Front Left Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.75, 1.5)
+use_as_steering = true
+wheel_radius = 0.75
+
+[node name="Tire" type="MeshInstance3D" parent="Front Left Wheel"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_7822p")
+
+[node name="Front Right Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.75, 1.5)
+use_as_steering = true
+wheel_radius = 0.75
+
+[node name="Tire" type="MeshInstance3D" parent="Front Right Wheel"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_7822p")
+
+[node name="Back Left Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.75, -1.5)
+use_as_traction = true
+wheel_radius = 0.75
+
+[node name="Tire" type="MeshInstance3D" parent="Back Left Wheel"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_7822p")
+
+[node name="Back Right Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.75, -1.5)
+use_as_traction = true
+wheel_radius = 0.75
+
+[node name="Tire" type="MeshInstance3D" parent="Back Right Wheel"]
+transform = Transform3D(-4.3845e-08, -1.00306, 0, 1.00306, -4.3845e-08, 0, 0, 0, 1.00306, 0, 0, 0)
+mesh = SubResource("TorusMesh_7822p")

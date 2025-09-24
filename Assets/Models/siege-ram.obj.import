@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq0a1m1p6wioh"
+path="res://.godot/imported/siege-ram.obj-0b5da142844c8b8b1e0de3855251f46d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/siege-ram.obj-0b5da142844c8b8b1e0de3855251f46d.mesh"]
+
+source_file="res://Assets/Models/siege-ram.obj"
+dest_files=["res://.godot/imported/siege-ram.obj-0b5da142844c8b8b1e0de3855251f46d.mesh", "res://.godot/imported/siege-ram.obj-0b5da142844c8b8b1e0de3855251f46d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

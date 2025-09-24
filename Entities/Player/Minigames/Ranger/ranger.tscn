@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3647p6kawb8s"]
+
+[ext_resource type="ArrayMesh" uid="uid://ddupvd1m8nnoe" path="res://Assets/Models/character-male-e.obj" id="1_pbnpx"]
+[ext_resource type="Script" uid="uid://bquq27fjh4pre" path="res://Entities/Player/ranger.gd" id="2_p22u8"]
+[ext_resource type="Script" uid="uid://dj8hcuadmes0y" path="res://Entities/Player/Minigames/Ranger/RangerMinigame.gd" id="3_ha3b4"]
+[ext_resource type="PackedScene" uid="uid://5wusuwyfx4m8" path="res://Entities/atb_meter.tscn" id="4_rycvj"]
+[ext_resource type="AudioStream" uid="uid://bg3qo1hsj1dw5" path="res://Assets/Audio/puishdabutton.wav" id="5_r65nw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fkatx"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Ranger" type="MeshInstance3D" node_paths=PackedStringArray("minigame")]
+mesh = ExtResource("1_pbnpx")
+skeleton = NodePath("../../..")
+script = ExtResource("2_p22u8")
+minigame = NodePath("Minigame")
+atb_charge_time = 2.0
+
+[node name="RangerCamera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.47558, 0.461674, -1.23673)
+fov = 42.1
+
+[node name="RayCast3D" type="RayCast3D" parent="RangerCamera"]
+target_position = Vector3(0, 0, -10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Minigame" type="Node" parent="."]
+script = ExtResource("3_ha3b4")
+damage_amount = 30
+display_name = "Sureshot"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ATB Meter" parent="." instance=ExtResource("4_rycvj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.893605, 0)
+texture = SubResource("ViewportTexture_fkatx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_r65nw")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cmptwhykfn7q4"]
 
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_unlock_popup.gd" id="1_tu1gv"]
+[ext_resource type="Script" uid="uid://sl7g2311piwu" path="res://Menus/Battle Pass/battle_pass_unlock_popup.gd" id="1_tu1gv"]
 [ext_resource type="Texture2D" uid="uid://bctj41iuwrvmx" path="res://Assets/no-item.png" id="2_0s2hi"]
 [ext_resource type="AudioStream" uid="uid://cgrvakf2ygus7" path="res://Assets/Audio/Fucking Epic.wav" id="2_urbrj"]
 [ext_resource type="AudioStream" uid="uid://dykrh3at26of6" path="res://Assets/Audio/Godlike.wav" id="3_1axpj"]
@@ -202,9 +202,9 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85qs3"]
 _data = {
-"RESET": SubResource("Animation_26oec"),
-"wipe_in": SubResource("Animation_n7dr6"),
-"wipe_out": SubResource("Animation_7qm5o")
+&"RESET": SubResource("Animation_26oec"),
+&"wipe_in": SubResource("Animation_n7dr6"),
+&"wipe_out": SubResource("Animation_7qm5o")
 }
 
 [node name="BattlePassUnlockPopup" type="Control"]
@@ -293,7 +293,7 @@ text = "Ok.."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_85qs3")
+&"": SubResource("AnimationLibrary_85qs3")
 }
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

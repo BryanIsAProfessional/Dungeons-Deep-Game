@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://nfpttbw2a8q1"]
 
 [ext_resource type="Texture2D" uid="uid://dskjckjyxjji4" path="res://Assets/Drawing.sketchpad_1.png" id="1_wfqjq"]
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_ln8cy"]
+[ext_resource type="Script" uid="uid://cytw7d03n1rf2" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_ln8cy"]
 
 [resource]
 script = ExtResource("2_ln8cy")
 display_name = "Shrek Spray"
 icon = ExtResource("1_wfqjq")
+rarity = 0

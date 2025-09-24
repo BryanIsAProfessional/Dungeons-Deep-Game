@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://bmcnrye1wpy5m"]
 
 [ext_resource type="Texture2D" uid="uid://8bchrcevypvp" path="res://Assets/Drawing-1.sketchpad.png" id="1_w06hi"]
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_aja6x"]
+[ext_resource type="Script" uid="uid://cytw7d03n1rf2" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_aja6x"]
 
 [resource]
 script = ExtResource("2_aja6x")

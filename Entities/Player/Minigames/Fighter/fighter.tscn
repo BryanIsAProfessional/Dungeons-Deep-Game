@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://3l3dslvufj7b"]
+
+[ext_resource type="ArrayMesh" uid="uid://ci6cdlwbj72n6" path="res://Assets/Models/character-female-d.obj" id="1_7mhyc"]
+[ext_resource type="Script" uid="uid://bujeyanmeghci" path="res://Entities/Player/fighter.gd" id="2_cxp2q"]
+[ext_resource type="Script" uid="uid://ce00dxv8x0g6e" path="res://Entities/Player/Minigames/Fighter/FighterMinigame.gd" id="3_e5lvi"]
+[ext_resource type="PackedScene" uid="uid://5wusuwyfx4m8" path="res://Entities/atb_meter.tscn" id="4_mus2f"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j2ign"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Fighter" type="MeshInstance3D" node_paths=PackedStringArray("minigame")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_7mhyc")
+skeleton = NodePath("../../..")
+script = ExtResource("2_cxp2q")
+atb_charge_time = 8.0
+minigame = NodePath("Minigame")
+
+[node name="Minigame" type="Node" parent="."]
+script = ExtResource("3_e5lvi")
+display_name = "Hack and Slash"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ATB Meter" parent="." instance=ExtResource("4_mus2f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.893605, 0)
+texture = SubResource("ViewportTexture_j2ign")

@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="BattlePassItem" load_steps=3 format=3 uid="uid://basl3qh6513wb"]
 
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_c08oe"]
+[ext_resource type="Script" uid="uid://cytw7d03n1rf2" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="1_c08oe"]
 [ext_resource type="Texture2D" uid="uid://d000ub6jrsi18" path="res://Assets/Drawing-4.sketchpad.png" id="1_msg1m"]
 
 [resource]
 script = ExtResource("1_c08oe")
 display_name = "Bruh Spray"
 icon = ExtResource("1_msg1m")
+rarity = 0

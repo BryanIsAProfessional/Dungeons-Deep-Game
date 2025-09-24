@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://ux1628xpij78"]
+
+[ext_resource type="PackedScene" uid="uid://lhr0xbn1uugv" path="res://Entities/Player/car.tscn" id="1_d2gq7"]
+[ext_resource type="PackedScene" uid="uid://blcbfcb4tem0g" path="res://Points Of Interest/point_of_interest.tscn" id="2_gons6"]
+[ext_resource type="PackedScene" uid="uid://by6khyd3apsro" path="res://Points Of Interest/Communist Alvaresto/communist alvaresto.tscn" id="3_f1tqp"]
+[ext_resource type="PackedScene" uid="uid://df0c5dhv1c5ws" path="res://Assets/police_car.blend" id="4_notro"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2gq7"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_gons6"]
+sky_material = SubResource("ProceduralSkyMaterial_d2gq7")
+
+[sub_resource type="Environment" id="Environment_f1tqp"]
+background_mode = 2
+sky = SubResource("Sky_gons6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_d2gq7"]
+offsets = PackedFloat32Array(0, 0.0806452, 1)
+colors = PackedColorArray(0.447858, 0.268242, 0.142704, 1, 6.10659e-07, 0.200141, 0.00660106, 1, 0.0745098, 1, 0.0862745, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gons6"]
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f1tqp"]
+color_ramp = SubResource("Gradient_d2gq7")
+noise = SubResource("FastNoiseLite_gons6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_notro"]
+albedo_texture = SubResource("NoiseTexture2D_f1tqp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sv2eh"]
+size = Vector3(2.00439, 1.92957, 6.30566)
+
+[node name="Car World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f1tqp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(1000, 1, 1000)
+material = SubResource("StandardMaterial3D_notro")
+
+[node name="VehicleBody3D" parent="." instance=ExtResource("1_d2gq7")]
+
+[node name="Point Of Interest" parent="." instance=ExtResource("2_gons6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.8013)
+
+[node name="Communist Alvaresto" parent="." instance=ExtResource("3_f1tqp")]
+transform = Transform3D(-0.0786679, 0, -0.996901, 0, 1, 0, 0.996901, 0, -0.0786679, -17.3338, 0.05, 20.1524)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.950483, 0, 0.310776, 0, 1, 0, -0.310776, 0, -0.950483, 11.9491, 0, 7.75416)
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 2
+
+[node name="police_car" parent="RigidBody3D" instance=ExtResource("4_notro")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00771046, 0.958412, 0.230859)
+shape = SubResource("BoxShape3D_sv2eh")

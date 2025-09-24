@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://c37r4tmfyd8wt"]
+[gd_scene load_steps=3 format=3 uid="uid://c37r4tmfyd8wt"]
+
+[ext_resource type="Script" uid="uid://duwim2lido7fc" path="res://Menus/Main Menu/main_menu.gd" id="1_s5h8b"]
+
+[sub_resource type="SystemFont" id="SystemFont_c1l01"]
+font_names = PackedStringArray("Cursive")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +12,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s5h8b")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -527.5
+offset_top = 10.0
+offset_right = 527.5
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.632225, 1.9493e-06, 3.36915e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_c1l01")
+theme_override_font_sizes/font_size = 150
+text = "Dungeons Deep"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.5
+offset_top = -27.0
+offset_right = 128.5
+offset_bottom = -4.0
+grow_vertical = 0
+text = "(not stolen)"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -10.0
+offset_right = -25.0
+offset_bottom = 292.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Start Game Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Nose Clicker Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Nose Clicker"
+
+[node name="Battle Pass Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Battle Pass"
+
+[node name="Quit Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start Game Button" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Nose Clicker Button" to="." method="_on_nose_clicker_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Battle Pass Button" to="." method="_on_battle_pass_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]

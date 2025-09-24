@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b3rptvwf3ogkh"]
 
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass.gd" id="1_3ywu1"]
-[ext_resource type="Script" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_m6jqb"]
+[ext_resource type="Script" uid="uid://dxdi766av7rte" path="res://Menus/Battle Pass/battle_pass.gd" id="1_3ywu1"]
+[ext_resource type="Script" uid="uid://cytw7d03n1rf2" path="res://Menus/Battle Pass/battle_pass_item_resource.gd" id="2_m6jqb"]
 [ext_resource type="Resource" uid="uid://csrfevg8gpibp" path="res://Menus/Battle Pass/Resources/Nude Mod.tres" id="3_338ii"]
 [ext_resource type="Resource" uid="uid://20g66ry8b1a6" path="res://Menus/Battle Pass/Resources/Get Her Pregnant.tres" id="4_hnti6"]
 [ext_resource type="Resource" uid="uid://nfpttbw2a8q1" path="res://Menus/Battle Pass/Resources/Shrek Spray.tres" id="4_om8w2"]
